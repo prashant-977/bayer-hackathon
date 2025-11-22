@@ -1,3 +1,4 @@
+# ...existing code...
 """Quick test with inline data - no external files needed"""
 
 import pandas as pd
@@ -20,16 +21,36 @@ df = pd.DataFrame({
 # Test 1: Bar chart
 print("Test 1: Status distribution")
 fig1 = generate_visualization("Show status distribution", df)
-print(f"✅ Result: {type(fig1).__name__ if fig1 else 'None'}\n")
+if fig1 is not None:
+    # prefer explicit browser renderer in scripts; remove renderer arg if running in notebook
+    try:
+        fig1.show(renderer="browser")
+    except Exception:
+        fig1.show()
+else:
+    print("No figure produced for Test 1")
 
 # Test 2: Time series
 print("Test 2: Trend over time")
 fig2 = generate_visualization("Show trend over time", df)
-print(f"✅ Result: {type(fig2).__name__ if fig2 else 'None'}\n")
+if fig2 is not None:
+    try:
+        fig2.show(renderer="browser")
+    except Exception:
+        fig2.show()
+else:
+    print("No figure produced for Test 2")
 
 # Test 3: Histogram
 print("Test 3: Handling time")
 fig3 = generate_visualization("What was average handling time?", df)
-print(f"✅ Result: {type(fig3).__name__ if fig3 else 'None'}\n")
+if fig3 is not None:
+    try:
+        fig3.show(renderer="browser")
+    except Exception:
+        fig3.show()
+else:
+    print("No figure produced for Test 3")
 
 print("✅ All tests completed!")
+# ...existing code...
