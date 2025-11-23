@@ -447,7 +447,7 @@ class VisualizationGenerator:
         
         return best_col
     
-def create_visualization(self, data: pd.DataFrame, viz_type: str, context: Dict) -> Optional[Any]:
+    def create_visualization(self, data: pd.DataFrame, viz_type: str, context: Dict) -> Optional[Any]:
         """Create visualization with insights"""
         try:
             if viz_type == 'histogram':
