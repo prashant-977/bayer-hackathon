@@ -9,7 +9,7 @@ Run: python examples/basic_usage.py
 
 import pandas as pd
 import sys
-sys.path.append('..')  # Add parent directory to path
+sys.path.append('../')  # Add parent directory to path
 from context2visual import generate_visualization, VisualizationGenerator
 
 
